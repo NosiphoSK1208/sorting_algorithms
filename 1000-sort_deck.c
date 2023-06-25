@@ -1,7 +1,7 @@
 #include "deck.h"
 
 int comp_str(const char *first, const char *second);
-char accept_urg(deck_node_t *ponter_c);
+char accept_urg(deck_node_t *card);
 void insert_sdk(deck_node_t **dck);
 void insertion_sdk_value(deck_node_t **dck);
 void sort_deck(deck_node_t **dck);
@@ -29,38 +29,38 @@ int comp_str(const char *first, const char *second)
 }
 
 /**
- * accept_urg - Get the numerical value of a ponter_c.
- * @ponter_c: A pointer to a deck_node_t ponter_c.
+ * accept_urg - Get the numerical value of a card.
+ * @card: A pointer to a deck_node_t card.
  *
- * Return: The numerical value of the ponter_c.
+ * Return: The numerical value of the card.
  */
-char accept_urg(deck_node_t *ponter_c)
+char accept_urg(deck_node_t *card)
 {
-	if (comp_str(ponter_c->ponter_c->value, "Ace") == 0)
+	if (comp_str(card->card->value, "Ace") == 0)
 		return (0);
-	if (comp_str(ponter_c->ponter_c->value, "1") == 0)
+	if (comp_str(card->card->value, "1") == 0)
 		return (1);
-	if (comp_str(ponter_c->ponter_c->value, "2") == 0)
+	if (comp_str(card->card->value, "2") == 0)
 		return (2);
-	if (comp_str(ponter_c->ponter_c->value, "3") == 0)
+	if (comp_str(card->card->value, "3") == 0)
 		return (3);
-	if (comp_str(ponter_c->ponter_c->value, "4") == 0)
+	if (comp_str(card->card->value, "4") == 0)
 		return (4);
-	if (comp_str(ponter_c->ponter_c->value, "5") == 0)
+	if (comp_str(card->card->value, "5") == 0)
 		return (5);
-	if (comp_str(ponter_c->ponter_c->value, "6") == 0)
+	if (comp_str(card->card->value, "6") == 0)
 		return (6);
-	if (comp_str(ponter_c->ponter_c->value, "7") == 0)
+	if (comp_str(card->card->value, "7") == 0)
 		return (7);
-	if (comp_str(ponter_c->ponter_c->value, "8") == 0)
+	if (comp_str(card->card->value, "8") == 0)
 		return (8);
-	if (comp_str(ponter_c->ponter_c->value, "9") == 0)
+	if (comp_str(card->card->value, "9") == 0)
 		return (9);
-	if (comp_str(ponter_c->ponter_c->value, "10") == 0)
+	if (comp_str(card->card->value, "10") == 0)
 		return (10);
-	if (comp_str(ponter_c->ponter_c->value, "Jack") == 0)
+	if (comp_str(card->card->value, "Jack") == 0)
 		return (11);
-	if (comp_str(ponter_c->ponter_c->value, "Queen") == 0)
+	if (comp_str(card->card->value, "Queen") == 0)
 		return (12);
 	return (13);
 }
@@ -77,7 +77,7 @@ void insert_sdk(deck_node_t **dck)
 	{
 		holder = iter->next;
 		insrt = iter->prev;
-		while (insrt != NULL && insrt->ponter_c->kind > iter->ponter_c->kind)
+		while (insrt != NULL && insrt->card->kind > iter->card->kind)
 		{
 			insrt->next = iter->next;
 			if (iter->next != NULL)
@@ -108,7 +108,7 @@ void insertion_sdk_value(deck_node_t **dck)
 		holder = iter->next;
 		insrt = iter->prev;
 		while (insrt != NULL &&
-		       insrt->ponter_c->kind == iter->ponter_c->kind &&
+		       insrt->card->kind == iter->card->kind &&
 		       accept_urg(insrt) > accept_urg(iter))
 		{
 			insrt->next = iter->next;
