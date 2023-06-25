@@ -7,7 +7,7 @@
  *
  * Return: The maximum integer in the arr.
  */
-int get_greatest (int *arr, int asize)
+int get_greatest(int *arr, int asize)
 {
 	int limit, k;
 
@@ -38,7 +38,7 @@ void counting_sort(int *arr, size_t asize)
 	resolved = malloc(sizeof(int) * asize);
 	if (resolved == NULL)
 		return;
-	limit = get_greatest (arr, asize);
+	limit = get_greatest(arr, asize);
 	cast_up = malloc(sizeof(int) * (limit + 1));
 	if (cast_up == NULL)
 	{
