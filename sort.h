@@ -34,21 +34,21 @@ typedef enum bool
 } bool;
 
 /* The helper functions: printing  */
-void print_array(const int *array, t_size size);
+void print_array(const int *array, size_t asz);
 void print_list(const listint_t *list);
 
 /* The algoritms sorting  */
 void insertion_sort_list(listint_t **list);
-void selection_sort(int *array, t_size size);
-void bubble_sort(int *array, t_size size);
-void quick_sort(int *array, t_size size);
-void shell_sort(int *array, t_size size);
-void counting_sort(int *array, t_size size);
-void merge_sort(int *array, t_size size);
+void selection_sort(int *array, size_t asz);
+void bubble_sort(int *array, size_t asz);
+void quick_sort(int *array, size_t asz);
+void shell_sort(int *array, size_t asz);
+void counting_sort(int *array, size_t asz);
+void merge_sort(int *array, size_t asz);
 void cocktail_sort_list(listint_t **list);
-void heap_sort(int *array, t_size size);
-void bitonic_sort(int *array, t_size size);
-void radix_sort(int *array, t_size size);
-void quick_sort_hoare(int *array, t_size size);
+void heap_sort(int *array, size_t asz);
+void bitonic_sort(int *array, size_t asz);
+void radix_sort(int *array, size_t asz);
+void quick_sort_hoare(int *array, size_t asz);
 
 #endif /* The end of SORT_H */
