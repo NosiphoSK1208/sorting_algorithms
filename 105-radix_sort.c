@@ -1,7 +1,7 @@
 #include "sort.h"
 
 int get_greatest(int *arr_int, int asz);
-void counting_sort(int *arr_int, size_t asz, int sg, int *bff);
+void a_counting_sort(int *arr_int, size_t asz, int sg, int *bff);
 void radix_sort(int *arr_int, size_t asz);
 
 /**
@@ -25,14 +25,14 @@ int get_greatest(int *arr, int asize)
 }
 
 /**
- * counting_sort - Sort the significant digits of an array of integers
+ * a_counting_sort - Sort the significant digits of an array of integers
  *                       in ascending order using the counting sort algorithm.
  * @arr_int: an array of integers.
  * @asz: The asz of the array.
  * @sg: The significant digit to sort on.
  * @bff: A buffer to store the sorted arr_int.
  */
-void counting_sort(int *arr_int, size_t asz, int sg, int *bff)
+void a_counting_sort(int *arr_int, size_t asz, int sg, int *bff)
 {
 	int toll[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	size_t i;
@@ -76,7 +76,7 @@ void radix_sort(int *arr_int, size_t asz)
 	lmt = get_greatest(arr_int, asz);
 	for (sg = 1; lmt / sg > 0; sg *= 10)
 	{
-		counting_sort(arr_int, asz, sg, bff);
+		a_counting_sort(arr_int, asz, sg, bff);
 		print_array(arr_int, asz);
 	}
 
